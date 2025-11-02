@@ -2,5 +2,4 @@
 
 ```python
 from bookshelf.models import Book
-book = Book(title="The Alchemist", author="Paulo Coelho")
-book.save()
+Book.objects.create(title="1984", author="George Orwell")
