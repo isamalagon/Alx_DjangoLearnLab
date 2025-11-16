@@ -63,3 +63,14 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = 'static/'
+
+# SECURITY SETTINGS
+
+DEBUG = False  # Turn off in production
+
+SECURE_BROWSER_XSS_FILTER = True  # Enables browser XSS protection
+SECURE_CONTENT_TYPE_NOSNIFF = True  # Prevents MIME-type sniffing
+X_FRAME_OPTIONS = 'DENY'  # Prevents clickjacking
+
+CSRF_COOKIE_SECURE = True  # CSRF cookie sent only over HTTPS
+SESSION_COOKIE_SECURE = True  # Session cookie sent only over HTTPS
