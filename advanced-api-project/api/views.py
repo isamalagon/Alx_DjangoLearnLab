@@ -1,4 +1,6 @@
+from django_filters import rest_framework
 from django.shortcuts import render
+from django_filters.rest_framework import DjangoFilterBackend
 
 # Create your views here.
 from rest_framework import generics, permissions
