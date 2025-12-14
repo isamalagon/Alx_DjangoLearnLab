@@ -1,3 +1,5 @@
+
+# Create your views here.
 from django.shortcuts import render
 from django.contrib.auth import get_user_model
 from rest_framework.views import APIView
@@ -11,8 +13,6 @@ from .serializers import RegisterSerializer, LoginSerializer, UserSerializer
 from .models import User
 
 
-
-# Create your views here.
 User = get_user_model()
 
 
@@ -36,6 +36,7 @@ class LoginView(generics.GenericAPIView):
         user = serializer.validated_data['user']
         token, _ = Token.objects.get_or_create(user=user)
         return Response({'token': token.key, 'user': UserSerializer(user).data}, status=status.HTTP_200_OK)
+
 class FollowUserView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
